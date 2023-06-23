@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TextNumberCalculator</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@500&display=swap" rel="stylesheet">
+    <style>
+        *{
+            font-family: 'Inter', sans-serif;
+            background: url("Sp.svg");
+            color: white;
+        }
+        .makecenter{
+            margin: 0px;
+            padding: 0px;
+            display: flex;
+            justify-content: center;
+            /* background: linear-gradient(to right,rgb(194, 229, 244) 50%,white 50%); */
+            height: 100vh;
+        }
+        input{
+            border-left: 0px;
+            border-top: 0px;
+            border-right: 0px;
+            background-color: transparent;
+            width: 300px;
+            padding: 2px 10px;
+            font-size: 20px;
+        }
+        button{
+            display: block;
+            color:white;
+            background-color: transparent;
+            border: 2px solid white;
+            padding: 6px 100px;
+            border-radius: 20px;
+            background-color: azure;
+            cursor: pointer;
+        }
+        .butdiv{
+            display: flex;
+            justify-content: center;
+            margin-top: 40px;
+
+        }
+        .p{
+            margin-top: 100px;
+        }
+        .textalign{
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <h1 class="textalign">NotesCalculator</h1>
+    <p class="textalign">---The Only Calculator U Need To Count Your Total Expenses Written In Notes -----</p>
+    <p class="textalign">Just Copy And Paste Here</p>
+    <div class="makecenter">
+        <div>
+            <p class="p">Enter Amount : </p>
+            <input type="text" name="" id="text">
+            <div class="butdiv">
+                <button onclick="callme()">Calculate</button>
+            </div>
+            <p style="text-align: center;margin-top: 40px;font-size: 22px;" id="result"></p>
+            
+        </div>
+
+    </div>
+
+
+
+
+
+
+<!--
+Sample Input :
+100
+20
+30
+50
+100
+Sample Output:
+300
+-->
+
+
+
+
+
+
+
+    <script>
+        function callme(){
+        var a=document.getElementById("text").value;
+        console.log(a);
+        var b="";
+        for(var z=0;z<a.length;z++){
+            if(a[z]==' '){
+                b=b+'+';
+            }
+            b=b+a[z];
+        }
+        console.log(b);
+        var final=eval(b)
+        document.getElementById("result").innerHTML=`Total : ${final}`;
+
+        }
+    </script>
+</body>
+</html>
